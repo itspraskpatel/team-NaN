@@ -13,5 +13,7 @@ paramters and syntax of body is as follow:
     "noOfTickets" : 5,
     "age" : 27
 }
-if sucess responds back with 
+
+if sucess responds back with
+
 {status : "success", message : "Booking done"}
