@@ -19,7 +19,7 @@ const oauth2Client = new google.auth.OAuth2(
 );
 
 // Set the refresh token
-var htmlTemplate = fs.readFileSync('./mailContent.html', 'utf8');
+let htmlTemplate = fs.readFileSync('./mailContent.html', 'utf8');
 
 oauth2Client.setCredentials({
   refresh_token: refresh_token
