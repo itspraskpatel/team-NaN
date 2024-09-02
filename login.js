@@ -4,6 +4,7 @@ const {Otp} = require("./db");
 const {emailSchema} = require("./types")
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
+const fs = require('fs');
 
 const refresh_token = "1//04wI8JUIrlLhiCgYIARAAGAQSNwF-L9IrM6MNoFMMabsZqFmSDzEqhfMEru4Kw4N2A2SpbrFs7PoDYo0a8V-mCiAb4Rcds8jSYfc"
 const client_id =  "606398992485-vafmj5p1n2vskkbsjqob90ass0cftp63.apps.googleusercontent.com"
@@ -18,7 +19,7 @@ const oauth2Client = new google.auth.OAuth2(
 );
 
 // Set the refresh token
-
+var htmlTemplate = fs.readFileSync('./mailContent.html', 'utf8');
 
 oauth2Client.setCredentials({
   refresh_token: refresh_token
@@ -27,6 +28,7 @@ async function sendOTP(email , otp){
     try {
         // Generate an access token
         const accessToken = await oauth2Client.getAccessToken();
+        htmlTemplate = htmlTemplate.replace('{{otp}}',otp)
         //console.log("access token is-------------->" + accessToken.token)
         // Create a Nodemailer transporter with OAuth2
         const transporter = nodemailer.createTransport({
@@ -40,13 +42,13 @@ async function sendOTP(email , otp){
                 accessToken: accessToken.token // Use the token from OAuth2 client
             },
         });
-
         // Define email options
         const mailOptions = {
-            from: "the boty botyyy ",
+            from: "Cultura Bot",
             to: email, // Replace with the recipient's email
-            subject: 'OTP',
-            text: 'the otp is '+otp,
+            subject: 'OTP for login',
+            //text: 'Dear user your OTP is ',
+            html : htmlTemplate
         };
 
         // Send the email
