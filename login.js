@@ -5,6 +5,7 @@ const {emailSchema} = require("./types")
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const fs = require('fs');
+const path = require('path');
 
 const refresh_token = "1//04wI8JUIrlLhiCgYIARAAGAQSNwF-L9IrM6MNoFMMabsZqFmSDzEqhfMEru4Kw4N2A2SpbrFs7PoDYo0a8V-mCiAb4Rcds8jSYfc"
 const client_id =  "606398992485-vafmj5p1n2vskkbsjqob90ass0cftp63.apps.googleusercontent.com"
@@ -17,9 +18,9 @@ const oauth2Client = new google.auth.OAuth2(
   client_secret ,
   redirect_uris
 );
-
+const htmlPath = path.join(__dirname, '..', 'teamNaN-SIH', 'mailContent.html');
 // Set the refresh token
-let htmlTemplate = fs.readFileSync('./mailContent.html', 'utf8');
+let htmlTemplate = fs.readFileSync(htmlPath, 'utf8');
 
 oauth2Client.setCredentials({
   refresh_token: refresh_token
