@@ -10,6 +10,12 @@ const bookingSchema = new mongoose.Schema({
     age : Number,
 });
 
-const Booking = mongoose.model('Booking', bookingSchema);
+const otpSchema = new mongoose.Schema({
+    email : String,
+    otp : Number
+});
 
-module.exports = { Booking }
+const Booking = mongoose.model('Booking', bookingSchema);
+const Otp = mongoose.model('Otp', otpSchema);
+
+module.exports = { Booking , Otp };

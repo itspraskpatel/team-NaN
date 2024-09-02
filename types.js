@@ -8,5 +8,9 @@ const bookingValue = zod.object({
     age : zod.number(),
 
 })
+const emailSchema = zod.object({
+    email: zod.string().email(),
+    otp : zod.number()
+})
 
-module.exports = { bookingValue }
+module.exports = { bookingValue , emailSchema}
