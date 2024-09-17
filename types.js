@@ -2,10 +2,12 @@ const zod = require("zod")
 
 const bookingValue = zod.object({ 
     name : zod.string(),
-    time : zod.string(),
-    place : zod.string(),
+    museumName : zod.string(),
     noOfTickets : zod.number(),
-    age : zod.number(),
+    time : zod.string(),
+    phone : zod.number(),
+    email : zod.string()
+    
 
 })
 const emailSchema = zod.object({

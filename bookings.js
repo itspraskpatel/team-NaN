@@ -15,10 +15,11 @@ router.post("/" , async (req, res) => {
 
         await Booking.create({
             name : createBooking.name,
-            time : createBooking.time,
-            place : createBooking.place,
+            museumName : createBooking.museumName,
             noOfTickets : createBooking.noOfTickets,
-            age : createBooking.age,
+            time : createBooking.time,
+            phone : createBooking.phone,
+            email : createBooking.email
         });
 
         res.json({status : "success", message : "Booking done"});

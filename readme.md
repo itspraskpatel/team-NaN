@@ -8,11 +8,12 @@
     example:
 
         {
-            "name" : "Rahul",
-            "time" : "11:55",
-            "place" : "delhi",
-            "noOfTickets" : 5,
-            "age" : 27
+            "name" : "Ankit",
+            "museumName" : "Victoria Museum",
+            "noOfTickets" : 3,
+            "time" : "11:11",
+            "phone" : 0123456789,
+            "email" : "abc@gmail.com"
         }
 
     If sucess responds back with

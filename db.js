@@ -4,10 +4,11 @@ mongoose.connect("mongodb+srv://itspraskpatel:dbpass12@cluster0.xowprk8.mongodb.
 
 const bookingSchema = new mongoose.Schema({
     name : String,
-    time : String,
-    place : String,
+    museumName : String,
     noOfTickets : Number,
-    age : Number,
+    time : String,
+    phone : Number,
+    email : String
 });
 
 const otpSchema = new mongoose.Schema({
