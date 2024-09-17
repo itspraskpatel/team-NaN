@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { Router } = require("express")
 const router = Router();
 const {Otp} = require("./db");
@@ -5,10 +6,10 @@ const {emailSchema} = require("./types")
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 
-const refresh_token = "1//04wI8JUIrlLhiCgYIARAAGAQSNwF-L9IrM6MNoFMMabsZqFmSDzEqhfMEru4Kw4N2A2SpbrFs7PoDYo0a8V-mCiAb4Rcds8jSYfc"
-const client_id =  "606398992485-vafmj5p1n2vskkbsjqob90ass0cftp63.apps.googleusercontent.com"
-const redirect_uris =  "https://developers.google.com/oauthplayground"
-const client_secret = "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"
+const refresh_token = process.env.REFRESH_TOKEN
+const client_id =  process.env.CLIENT_ID
+const redirect_uris =  process.env.REDIRECT_URIS
+const client_secret = process.env.CLIENT_SECRET
 
 // Create OAuth2 client
 const oauth2Client = new google.auth.OAuth2(
