@@ -45,7 +45,7 @@ async function sendEmail(email,content){
         const mailOptions = {
             from: "Cultura Bot",
             to: email, // Replace with the recipient's email
-            subject: 'OTP for login',
+            subject: 'Cultura Bot',
             //text: 'Dear user your OTP is ',
             html : content
         };
@@ -54,7 +54,7 @@ async function sendEmail(email,content){
         const result = await transporter.sendMail(mailOptions);
         console.log('Email sent successfully');
     } catch (error) {
-        console.error('Error sending email:', error);
+        console.log('Error sending email:', error);
     }
     
 }
