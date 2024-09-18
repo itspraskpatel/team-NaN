@@ -28,7 +28,7 @@ async function sendEmail(email,content){
         
         // Generate an access token
         const accessToken = await oauth2Client.getAccessToken();
-        //console.log("access token is-------------->" + accessToken.token)
+        console.log("access token is-------------->" + accessToken.token)
         // Create a Nodemailer transporter with OAuth2
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -52,7 +52,7 @@ async function sendEmail(email,content){
 
         // Send the email
         const result = await transporter.sendMail(mailOptions);
-        cconsole.log('Email sent successfully:');
+        console.log('Email sent successfully:');
         console.log('Accepted:', result.accepted);
         console.log('Rejected:', result.rejected);
         console.log('Response:', result.response);
