@@ -23,7 +23,7 @@ oauth2Client.setCredentials({
 
 
 async function sendEmail(email,content){
-    //console.log(content);
+    console.log("Sending to: "  + email)
     try {
         
         // Generate an access token
