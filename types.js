@@ -3,6 +3,7 @@ const zod = require("zod")
 const bookingValue = zod.object({ 
     name : zod.string(),
     museumName : zod.string(),
+    museumCode : zod.string(),
     noOfTickets : zod.number(),
     time : zod.string(),
     phone : zod.number(),
@@ -15,4 +16,12 @@ const emailSchema = zod.object({
     otp : zod.number()
 })
 
-module.exports = { bookingValue , emailSchema}
+const userDataSchema = zod.object({
+    name : zod.string(),
+    museumName : zod.string(),
+    noOfTickets : zod.number(),
+    time : zod.string(),
+    email : zod.string()
+})
+
+module.exports = { bookingValue , emailSchema , userDataSchema}
