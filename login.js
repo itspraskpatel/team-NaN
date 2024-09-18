@@ -28,8 +28,7 @@ router.post("/",async( req,res) =>{
 })
 
 function sendOTP(email,otp){
-    htmlTemplate = htmlTemplate.replace('{{otp}}',otp)
-    const content = htmlTemplate
+    const content = htmlTemplate.replace('{{otp}}',otp)
     sendEmail(email , content)
 
 }
