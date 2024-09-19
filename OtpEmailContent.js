@@ -89,7 +89,7 @@ let htmlTemplate = `
       </tr>
     </tbody>
   </table>
-</td>`;
+</td>`
 
 
 module.exports = htmlTemplate
